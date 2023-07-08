@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import AuthImage from '../component/AuthImage';
 import { yupResolver } from '@hookform/resolvers/yup';
+import logo from '../assets/logo.svg';
+import Button from '../UI/Button';
 
 const schema = yup
   .object({
@@ -43,16 +45,30 @@ const Login = () => {
     }
   }, [isSubmitSuccessful, reset]);
 
-  const onSubmit = function () {};
+  const onSubmit = function (data) {
+    console.log(data);
+  };
   return (
     <div className="grid grid-cols-2">
       <AuthImage />
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col justify-center px-6 md:px-24"
+        className="py-6 px-6 md:px-24 md:my-24"
       >
+        <div>
+          <div className="flex justify-center">
+            <img src={logo} />
+          </div>
+          <h1 className="text-4xl mt-4 text-center text-text-100">
+            Hello Again!
+          </h1>
+          <p className="text-center pt-3 pb-6 text-text-200">
+            We are glad to have you back at smartaccount <br /> sign up or login
+            to get started
+          </p>
+        </div>
         <div className="flex flex-col gap-1">
-          <label className="text-sm">Email</label>
+          <label className="text-sm text-text-200">Email</label>
           <input {...register('email')} className={formStyle} />
           <p className="-mt-8 mb-3 text-sm text-red-500">
             {errors.email?.message}
@@ -60,20 +76,27 @@ const Login = () => {
         </div>
 
         <div className="flex flex-col gap-1">
-          <label className="text-sm">Password</label>
+          <label className="text-sm text-text-200">Password</label>
           <input {...register('password')} className={formStyle} />
           <p className="-mt-8 text-sm text-red-500">
             {errors.password?.message}
           </p>
         </div>
 
-        <div className="bg-primary-100 text-primary-300 hover:bg-primary-200 duration-150 rounded mt-12">
-          <button type="submit" className="w-full h-10">
-            Submit
-          </button>
+        <div className="flex justify-between text-sm text-text-200">
+          <div className="flex">
+            <input type="checkbox" className="checked:bg-primary-100" />
+            <p>Remember me</p>
+          </div>
+          <p>Forgot Password</p>
         </div>
+        <Button name="Submit" style="bg-primary-100 text-primary-300 mt-10" />
+        <Button
+          name="Sign in with google"
+          style="bg-primary-300 text-primary-100 mt-5"
+        />
 
-        <div className="text-sm mt-8 ">
+        <div className="text-sm text-text-200 mt-8">
           Don't have an account yet?
           <Link
             to="/register"
