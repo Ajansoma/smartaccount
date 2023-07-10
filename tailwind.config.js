@@ -7,6 +7,7 @@ export default {
         'primary-100': '#5B5CA6',
         'primary-200': '#908CB8',
         'primary-300': '#FAF8FF',
+        'primary-400': '#918EDE',
         'text-100': '#495057',
         'text-200': '#868e96',
       },
