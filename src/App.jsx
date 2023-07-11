@@ -12,7 +12,9 @@ import SalesProjection from './pages/SalesProjection';
 const Layout = () => (
   <div className="flex">
     <Menu />
-    <Outlet />
+    <div className="flex-1">
+      <Outlet />
+    </div>
   </div>
 );
 

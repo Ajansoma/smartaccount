@@ -5,7 +5,7 @@ import noAvatar from '../assets/noavatar.jpeg';
 
 const Menu = () => {
   return (
-    <div className="bg-white h-screen drop-shadow-lg sticky px-14 py-6">
+    <div className="bg-white h-screen shadow-lg shadow-primary-100/20 fixed px-14 py-6">
       <img src={smartlogo} />
       <div>
         <div className="flex justify-center pt-12">
