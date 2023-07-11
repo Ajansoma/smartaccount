@@ -10,7 +10,7 @@ import Inventory from './pages/Inventory';
 import SalesProjection from './pages/SalesProjection';
 
 const Layout = () => (
-  <div>
+  <div className="flex">
     <Menu />
     <Outlet />
   </div>

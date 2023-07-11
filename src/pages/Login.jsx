@@ -2,13 +2,9 @@ import AuthImage from '../component/Auth/AuthImage';
 import Form from '../UI/Form';
 import AuthWelcomeMessage from '../component/Auth/AuthWelcomeMessage';
 import AuthRedirectMessage from '../component/Auth/AuthRedirectMessage';
+import { loginData } from '../data';
 
 const Login = () => {
-  const data = [
-    { id: 1, label: 'Username', name: 'username', type: 'email' },
-    { id: 2, label: 'Password', name: 'password', type: 'text' },
-  ];
-
   const onSubmit = function (data) {
     console.log(data);
   };
@@ -18,7 +14,7 @@ const Login = () => {
       <div className="px-6 md:px-24 my-24">
         <AuthWelcomeMessage />
         <Form
-          data={data}
+          data={loginData}
           onSubmit={onSubmit}
           isLoginForm={true}
           buttonName="Sign in"
