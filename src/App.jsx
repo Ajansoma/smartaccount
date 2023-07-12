@@ -12,7 +12,7 @@ import SalesProjection from './pages/SalesProjection';
 const Layout = () => (
   <div className="flex">
     <Menu />
-    <div className="flex-1">
+    <div className="flex-1 max-h-screen overflow-scroll">
       <Outlet />
     </div>
   </div>

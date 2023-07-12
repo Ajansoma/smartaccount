@@ -5,7 +5,7 @@ import noAvatar from '../assets/noavatar.jpeg';
 
 const Menu = () => {
   return (
-    <div className="bg-white h-screen shadow-lg shadow-primary-100/20 fixed px-14 py-6">
+    <div className="bg-white h-screen shadow-lg shadow-primary-100/20 sticky px-14 py-6">
       <img src={smartlogo} />
       <div>
         <div className="flex justify-center pt-12">
@@ -20,7 +20,7 @@ const Menu = () => {
         {menuData.map((data) => (
           <div
             key={data.link}
-            className="flex  text-xl gap-4 text-text-100 pb-7"
+            className="flex text-xl gap-4 text-text-100 pb-7"
           >
             <div> {data.icon}</div>
             <Link

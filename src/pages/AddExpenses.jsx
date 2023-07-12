@@ -7,7 +7,7 @@ const onSubmit = function (data) {
 
 const AddExpenses = () => {
   return (
-    <section className="px-12 md:px-24 my-24">
+    <section className="px-12 my-24">
       <div className="w-full flex justify-between items-center pb-6">
         <p className="text-text-100 text-2xl">Add Expenses</p>
         <div>
