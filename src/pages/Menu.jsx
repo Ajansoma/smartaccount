@@ -1,11 +1,12 @@
 import { menuData } from '../data';
-import { Link } from 'react-router-dom';
 import smartlogo from '../assets/smartlogo.svg';
 import noAvatar from '../assets/noavatar.jpeg';
+import { menuLink } from '../lib/menuLink';
+import { menuAuthLinks } from '../data';
 
 const Menu = () => {
   return (
-    <div className="bg-white h-screen shadow-lg shadow-primary-100/20 sticky px-14 py-6">
+    <div className="bg-white h-screen overflow-scroll drop-shadow-sm sticky px-14 py-6">
       <img src={smartlogo} />
       <div>
         <div className="flex justify-center pt-12">
@@ -16,22 +17,8 @@ const Menu = () => {
         </div>
       </div>
       <p className="text-text-200 pb-12">hapshair@gmail.com</p>
-      <div className="">
-        {menuData.map((data) => (
-          <div
-            key={data.link}
-            className="flex text-xl gap-4 text-text-100 pb-7"
-          >
-            <div> {data.icon}</div>
-            <Link
-              to={data.link}
-              className="hover:scale-105 hover:duration-300 hover:text-text-200 text-base"
-            >
-              {data.title}
-            </Link>
-          </div>
-        ))}
-      </div>
+      <div className="border-b-2">{menuData.map((data) => menuLink(data))}</div>
+      <div className="mt-6">{menuAuthLinks.map((data) => menuLink(data))}</div>
     </div>
   );
 };

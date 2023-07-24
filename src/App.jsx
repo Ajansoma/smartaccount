@@ -8,6 +8,7 @@ import AddOrder from './pages/AddOrder';
 import CutomerList from './pages/CutomerList';
 import Inventory from './pages/Inventory';
 import SalesProjection from './pages/SalesProjection';
+import AddInventory from './pages/AddInventory';
 
 const Layout = () => (
   <div className="flex">
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
       { path: '/', element: <Home /> },
       { path: '/addexpense', element: <AddExpenses /> },
       { path: '/addorder', element: <AddOrder /> },
+      { path: '/addinventory', element: <AddInventory /> },
       { path: '/customerlist', element: <CutomerList /> },
       { path: '/inventory', element: <Inventory /> },
       { path: '/salesprojection', element: <SalesProjection /> },

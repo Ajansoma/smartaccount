@@ -5,7 +5,7 @@ const ProfitSalesRevenue = () => {
     <div className="flex gap-6">
       {profitSalesRevenueData.map((data) => (
         <div
-          className="flex flex-col gap-5 bg-white shadow-md shadow-primary-100/20 text-text-100 p-4 rounded-lg w-full"
+          className="flex flex-col gap-5 bg-white drop-shadow-sm text-text-100 p-4 rounded-lg w-full"
           key={data.id}
         >
           <p className="uppercase text-sm ">{data.title}</p>

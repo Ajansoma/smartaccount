@@ -27,7 +27,7 @@ const Chart = () => {
   });
 
   return (
-    <section className="bg-white shadow-md shadow-primary-100/20 text-text-100 rounded-lg w-[66.1%] flex justify-center mt-6">
+    <section className="bg-white drop-shadow-sm text-text-100 rounded-lg w-[66.1%] flex justify-center mt-6">
       <div className="w-[28rem] py-14">
         <Doughnut data={userData} />
       </div>

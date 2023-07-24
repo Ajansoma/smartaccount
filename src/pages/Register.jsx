@@ -4,10 +4,10 @@ import AuthWelcomeMessage from '../component/Auth/AuthWelcomeMessage';
 import AuthRedirectMessage from '../component/Auth/AuthRedirectMessage';
 import { registerData } from '../data';
 
+const submitForm = function (data) {
+  console.log(data);
+};
 const Register = () => {
-  const onSubmit = function (data) {
-    console.log(data);
-  };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2">
       <AuthImage />
@@ -15,7 +15,7 @@ const Register = () => {
         <AuthWelcomeMessage />
         <Form
           data={registerData}
-          onSubmit={onSubmit}
+          submitForm={submitForm}
           isLoginForm={false}
           buttonName="Sign up"
         />

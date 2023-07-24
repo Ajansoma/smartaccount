@@ -1,7 +1,7 @@
 const ReportItem = ({ title, amount, icon }) => {
   return (
     <div className="flex items-center gap-6 py-5 border-b">
-      <div className="text-primary-100 bg-primary-500 p-[10px] rounded text-xl">
+      <div className="text-primary-100 bg-primary-500 px-[10px] py-[6px] rounded text-xl">
         {icon}
       </div>
       <div>

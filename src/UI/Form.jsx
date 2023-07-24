@@ -6,7 +6,7 @@ import Button from '../UI/Button';
 
 const formStyle =
   'w-full h-10 border border-grey-100 rounded placeholder:pl-2 focus:border-primary-100 outline-none mb-8';
-const Form = ({ data, onSubmit, isLoginForm, buttonName }) => {
+const Form = ({ data, isLoginForm, buttonName, submitForm }) => {
   const schema = yup
     .object({
       email: yup
@@ -51,7 +51,7 @@ const Form = ({ data, onSubmit, isLoginForm, buttonName }) => {
   }, [isSubmitSuccessful, reset]);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(submitForm)}>
       {data.map((data) => (
         <div className="flex flex-col gap-1" key={data.id}>
           <label className="text-sm text-text-200">{data.label}</label>

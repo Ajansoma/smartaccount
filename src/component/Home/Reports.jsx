@@ -3,10 +3,10 @@ import { reportsData } from '../../data';
 
 const Reports = () => {
   return (
-    <section className="flex gap-6">
+    <section className="flex flex-wrap md:flex-nowrap gap-6">
       {reportsData.map((data) => (
         <div
-          className="bg-white shadow-md shadow-primary-100/20 text-text-100 p-6 rounded-lg w-full mt-6"
+          className="bg-white drop-shadow-sm text-text-100 p-6 rounded-lg w-full mt-6"
           key={data.id}
         >
           <p

@@ -5,9 +5,25 @@ import AuthRedirectMessage from '../component/Auth/AuthRedirectMessage';
 import { loginData } from '../data';
 
 const Login = () => {
-  const onSubmit = function (data) {
-    console.log(data);
+  const submitForm = async function (data) {
+    try {
+      // Perform asynchronous operations here
+      await fetch('/api/submit', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      // Success handling
+      console.log('Form data submitted successfully!');
+    } catch (error) {
+      // Error handling
+      console.error('Error submitting form data:', error);
+    }
   };
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2">
       <AuthImage />
@@ -15,7 +31,7 @@ const Login = () => {
         <AuthWelcomeMessage />
         <Form
           data={loginData}
-          onSubmit={onSubmit}
+          submitForm={submitForm}
           isLoginForm={true}
           buttonName="Sign in"
         />

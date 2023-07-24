@@ -20,6 +20,11 @@ export const menuData = [
     title: 'Add Expense',
   },
   {
+    link: '/addinventory',
+    icon: <ion-icon name="add-circle-outline"></ion-icon>,
+    title: 'Add Inventory',
+  },
+  {
     link: '/inventory',
     icon: <ion-icon name="library-outline"></ion-icon>,
     title: 'Inventory',
@@ -28,6 +33,19 @@ export const menuData = [
     link: '/salesprojection',
     icon: <ion-icon name="analytics-outline"></ion-icon>,
     title: 'Projection',
+  },
+];
+
+export const menuAuthLinks = [
+  {
+    link: '/login',
+    icon: <ion-icon name="log-in-outline"></ion-icon>,
+    title: 'Login',
+  },
+  {
+    link: '/register',
+    icon: <ion-icon name="person-add-outline"></ion-icon>,
+    title: 'Register',
   },
 ];
 
