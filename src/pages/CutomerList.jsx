@@ -4,7 +4,7 @@ import { pagesTitle } from '../lib/pagesTitle';
 
 const CutomerList = () => {
   return (
-    <section className="px-12 my-24">
+    <section className="px-6 my-24">
       {pagesTitle(
         'Customer List',
         <ion-icon name="add-outline"></ion-icon>,

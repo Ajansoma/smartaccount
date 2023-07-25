@@ -1,6 +1,7 @@
 import Form from '../UI/Form';
 import { expenseData } from '../data';
 import { pagesTitle } from '../lib/pagesTitle';
+import { expenseSchema } from '../lib/schemas';
 
 const submitForm = function (data) {
   console.log(data);
@@ -8,7 +9,7 @@ const submitForm = function (data) {
 
 const AddExpenses = () => {
   return (
-    <section className="px-12 my-24">
+    <section className="px-6 my-24">
       {pagesTitle(
         'Add Expense',
         <ion-icon name="scan-outline"></ion-icon>,
@@ -20,6 +21,7 @@ const AddExpenses = () => {
           submitForm={submitForm}
           isLoginForm={false}
           buttonName="Submit"
+          schema={expenseSchema}
         />
       </div>
     </section>

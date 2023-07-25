@@ -50,7 +50,7 @@ export const menuAuthLinks = [
 ];
 
 export const loginData = [
-  { id: 1, label: 'Username', name: 'username', type: 'text' },
+  { id: 1, label: 'Email', name: 'email', type: 'text' },
   { id: 2, label: 'Password', name: 'password', type: 'text' },
 ];
 
@@ -67,9 +67,15 @@ export const orderData = [
 ];
 
 export const expenseData = [
-  { id: 1, label: 'Expense', name: 'productname', type: 'text' },
+  { id: 1, label: 'Expense', name: 'expense', type: 'text' },
 ];
 
+export const inventory = [
+  { id: 1, label: 'Product Name', name: 'productname', type: 'text' },
+  { id: 2, label: 'Selling Price', name: 'sellingprice', type: 'text' },
+  { id: 3, label: 'Cost Price', name: 'costprice', type: 'text' },
+  { id: 4, label: 'Units Available', name: 'unitsavaiable', type: 'text' },
+];
 export const inventoryData = [
   {
     id: 1,

@@ -1,30 +1,30 @@
 import Form from '../UI/Form';
-import { orderData } from '../data';
+import { inventory } from '../data';
 import { pagesTitle } from '../lib/pagesTitle';
-import { orderSchema } from '../lib/schemas';
+import { inventorySchema } from '../lib/schemas';
 
-const AddOrder = () => {
+const AddInventory = () => {
   const submitForm = function (data) {
     console.log(data);
   };
   return (
     <section className="px-6 my-24">
       {pagesTitle(
-        'Add Order',
+        'Add Inventory',
         <ion-icon name="scan-outline"></ion-icon>,
-        'Scan Order'
+        'Scan Inventory'
       )}
       <div className="bg-white drop-shadow-sm p-6 rounded-lg">
         <Form
-          data={orderData}
+          data={inventory}
           submitForm={submitForm}
           isLoginForm={false}
           buttonName="Submit"
-          schema={orderSchema}
+          schema={inventorySchema}
         />
       </div>
     </section>
   );
 };
 
-export default AddOrder;
+export default AddInventory;

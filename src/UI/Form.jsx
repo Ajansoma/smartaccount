@@ -1,37 +1,37 @@
 import { useEffect } from 'react';
-import * as yup from 'yup';
+// import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Button from '../UI/Button';
 
 const formStyle =
   'w-full h-10 border border-grey-100 rounded placeholder:pl-2 focus:border-primary-100 outline-none mb-8';
-const Form = ({ data, isLoginForm, buttonName, submitForm }) => {
-  const schema = yup
-    .object({
-      email: yup
-        .string('Email Address is invalid')
-        .email('Email Address is invalid')
-        .typeError('Email Address is invalid')
-        .required('Email Address is invalid'),
-      username: yup
-        .string('Username is invalid')
-        .typeError('Username is invalid')
-        .required('Username is invalid'),
-      productname: yup
-        .string('Product name is invalid')
-        .typeError('Product name is invalid')
-        .required('Product name is invalid'),
-      password: yup
-        .string()
-        .required('No password provided.')
-        .min(8, 'Password is too short - should be 8 chars minimum.')
-        .matches(
-          /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-          'Must Contain One Uppercase, Lowercase, Number and Special Case Character'
-        ),
-    })
-    .required();
+const Form = ({ data, isLoginForm, buttonName, submitForm, schema }) => {
+  // const schema = yup
+  //   .object({
+  //     email: yup
+  //       .string('Email Address is invalid')
+  //       .email('Email Address is invalid')
+  //       .typeError('Email Address is invalid')
+  //       .required('Email Address is invalid'),
+  //     username: yup
+  //       .string('Username is invalid')
+  //       .typeError('Username is invalid')
+  //       .required('Username is invalid'),
+  //     productname: yup
+  //       .string('Product name is invalid')
+  //       .typeError('Product name is invalid')
+  //       .required('Product name is invalid'),
+  //     password: yup
+  //       .string()
+  //       .required('No password provided.')
+  //       .min(8, 'Password is too short - should be 8 chars minimum.')
+  //       .matches(
+  //         /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+  //         'Must Contain One Uppercase, Lowercase, Number and Special Case Character'
+  //       ),
+  //   })
+  //   .required();
 
   const {
     register,

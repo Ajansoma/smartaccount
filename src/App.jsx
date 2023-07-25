@@ -1,4 +1,9 @@
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  Navigate,
+} from 'react-router-dom';
 import Menu from './pages/Menu';
 import Home from './pages/Home';
 import Register from './pages/Register';
@@ -9,6 +14,14 @@ import CutomerList from './pages/CutomerList';
 import Inventory from './pages/Inventory';
 import SalesProjection from './pages/SalesProjection';
 import AddInventory from './pages/AddInventory';
+import { useContext } from 'react';
+import { AuthContext } from './store/AuthContext';
+
+const RequireAuth = function ({ children }) {
+  const { currentUser } = useContext(AuthContext);
+  console.log(currentUser);
+  return currentUser ? children : <Navigate to="/login" />;
+};
 
 const Layout = () => (
   <div className="flex">
@@ -22,7 +35,11 @@ const Layout = () => (
 const router = createBrowserRouter([
   {
     path: '/register',
-    element: <Register />,
+    element: (
+      <RequireAuth>
+        <Register />
+      </RequireAuth>
+    ),
   },
   {
     path: '/login',
@@ -31,7 +48,11 @@ const router = createBrowserRouter([
 
   {
     path: '/',
-    element: <Layout />,
+    element: (
+      <RequireAuth>
+        <Layout />
+      </RequireAuth>
+    ),
     children: [
       { path: '/', element: <Home /> },
       { path: '/addexpense', element: <AddExpenses /> },
